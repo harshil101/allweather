@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.gauravbajaj.interviewready.data.model.User
 import com.gauravbajaj.interviewready.ui.screens.DetailsScreen
 import com.gauravbajaj.interviewready.ui.screens.HomeScreen
 
@@ -18,14 +19,14 @@ fun InterviewReadyNavHost(
         startDestination = startDestination
     ) {
         composable(Screen.Home.route) {
-            HomeScreen(navController = navController)
+            HomeScreen(navController = navController, onItemClick = { user ->
+                navController.currentBackStackEntry?.savedStateHandle?.set("user", user)
+                navController.navigate(Screen.Details.route)
+            })
         }
-        
+
         composable(
             route = Screen.Details.route,
-            arguments = listOf(
-                // Add arguments if needed
-            )
         ) { backStackEntry ->
             DetailsScreen(
                 navController = navController,

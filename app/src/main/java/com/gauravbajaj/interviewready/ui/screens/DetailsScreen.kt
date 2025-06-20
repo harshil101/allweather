@@ -1,5 +1,6 @@
 package com.gauravbajaj.interviewready.ui.screens
 
+import android.R.attr.id
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -11,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavBackStackEntry
+import com.gauravbajaj.interviewready.data.model.User
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -19,8 +21,8 @@ fun DetailsScreen(
     navBackStackEntry: NavBackStackEntry,
     modifier: Modifier = Modifier
 ) {
-    val id = navBackStackEntry.arguments?.getString("id")
-    
+    val user: User? = navController.previousBackStackEntry?.savedStateHandle?.get<User>("user") as User?
+
     Scaffold(
         modifier = modifier,
         topBar = {
@@ -52,7 +54,7 @@ fun DetailsScreen(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = "Item ID: ${id ?: "N/A"}",
+                    text = "Item ID: ${user?.id ?: "N/A"}",
                     style = MaterialTheme.typography.bodyLarge
                 )
                 Spacer(modifier = Modifier.height(16.dp))
