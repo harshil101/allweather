@@ -11,9 +11,9 @@ import com.gauravbajaj.interviewready.ui.components.ErrorMessage
 @Composable
 fun <T> ScreenContent(
     uiState: UIState<T>,
-    content: @Composable () -> Unit,
+    modifier: Modifier = Modifier,
     onRetry: () -> Unit = {},
-    modifier: Modifier = Modifier
+    content: @Composable () -> Unit,
 ) {
     Box(
         modifier = modifier.fillMaxSize(),
@@ -23,12 +23,15 @@ fun <T> ScreenContent(
             UIState.Initial -> {
                 // Initial state UI (placeholder or empty view)
             }
+
             UIState.Loading -> {
                 CircularProgressIndicator()
             }
+
             is UIState.Success -> {
                 content()
             }
+
             is UIState.Error -> {
                 ErrorMessage(
                     message = uiState.message,

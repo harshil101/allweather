@@ -1,17 +1,19 @@
 package com.gauravbajaj.interviewready.ui.screens
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.gauravbajaj.interviewready.navigation.Screen
 import com.gauravbajaj.interviewready.ui.viewmodel.HomeViewModel
+import com.gauravbajaj.interviewready.ui.base.ScreenContent
+import com.gauravbajaj.interviewready.ui.base.UIState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -21,33 +23,38 @@ fun HomeScreen(
 ) {
     val viewModel = hiltViewModel<HomeViewModel>()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-
+    LaunchedEffect(uiState) {
+        if (uiState is UIState.Initial) {
+            viewModel.loadUsers()
+        }
+    }
     Scaffold(
-        modifier = modifier
+        modifier = modifier,
+        topBar = {
+            TopAppBar(
+                title = { Text("Interview Ready") }
+            )
+        }
     ) { paddingValues ->
-        Box(
+        ScreenContent(
+            uiState = uiState,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValues)
+                .padding(paddingValues),
+            onRetry = {
+                viewModel.loadUsers()
+            }
         ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+
+            val successState = uiState as UIState.Success
+
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(16.dp)
             ) {
-                Text(
-                    text = "Welcome to Interview Ready",
-                    style = MaterialTheme.typography.headlineMedium
-                )
-                Spacer(modifier = Modifier.height(16.dp))
-                Button(
-                    onClick = { 
-                        navController.navigate(Screen.Details.createRoute("1"))
-                    }
-                ) {
-                    Text("Go to Details")
+                items(successState.data) { user ->
+                    Text(text = user.name, style = MaterialTheme.typography.bodyLarge)
+                    Spacer(modifier = Modifier.height(8.dp))
                 }
             }
         }
