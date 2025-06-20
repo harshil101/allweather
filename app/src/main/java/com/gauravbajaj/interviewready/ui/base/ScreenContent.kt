@@ -3,10 +3,13 @@ package com.gauravbajaj.interviewready.ui.base
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.gauravbajaj.interviewready.ui.components.ErrorMessage
+import com.gauravbajaj.interviewready.ui.components.LoadingIndicator
 
 /**
  * A composable function that displays different UI based on the [UIState].
@@ -32,11 +35,15 @@ fun <T> ScreenContent(
     ) {
         when (uiState) {
             UIState.Initial -> {
-                // Initial state UI (placeholder or empty view)
+                Text(
+                    text = "No content yet",
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.align(Alignment.Center)
+                )
             }
 
             UIState.Loading -> {
-                CircularProgressIndicator()
+                LoadingIndicator(modifier = Modifier.align(Alignment.Center))
             }
 
             is UIState.Success -> {

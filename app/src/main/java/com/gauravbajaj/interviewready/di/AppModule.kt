@@ -68,6 +68,10 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideUserRepository(userApi: UserApi, @ApplicationContext context: Context, moshi: Moshi): UserRepository =
+    fun provideUserRepository(
+        userApi: UserApi,
+        @ApplicationContext context: Context,
+        moshi: Moshi
+    ): UserRepository =
         UserRepository(userApi, context, moshi)
 }
