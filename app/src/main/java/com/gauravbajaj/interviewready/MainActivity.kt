@@ -4,12 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import com.gauravbajaj.interviewready.navigation.InterviewReadyNavHost
-import com.gauravbajaj.interviewready.ui.theme.ExperimentTheme
+import com.gauravbajaj.interviewready.ui.theme.InterviewReadyTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,7 +15,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            ExperimentTheme {
+            InterviewReadyTheme {
                 InterviewReadyNavHost()
             }
         }
@@ -32,7 +29,7 @@ fun InterviewReadyApp() {
 
 @Composable
 fun InterviewReadyPreview() {
-    ExperimentTheme {
+    InterviewReadyTheme {
         InterviewReadyApp()
     }
 }
