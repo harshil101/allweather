@@ -4,8 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
     id("kotlin-parcelize")
-
-//    alias(libs.plugins.hilt.android)
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -71,6 +70,7 @@ dependencies {
 
     // Navigation - Jetpack Navigation for Compose
     implementation(libs.navigationCompose) // Navigation components for Jetpack Compose
+    implementation(libs.androidx.hilt.navigation.compose)
 
     // Networking - Making HTTP requests and parsing responses
     implementation(libs.okhttp) // HTTP client

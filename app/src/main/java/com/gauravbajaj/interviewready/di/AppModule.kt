@@ -21,7 +21,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    @Named("baseUrl")
+    @BaseUrl
     fun provideBaseUrl(): String = BASE_URL
 
     @Provides
