@@ -10,6 +10,17 @@ import javax.inject.Singleton
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
+/**
+ * Repository for fetching user data.
+ *
+ * This class provides methods to fetch a list of users or a single user by their ID.
+ * It uses a [UserApi] to make network requests and [Moshi] for JSON parsing.
+ * For development purposes, it currently uses a local JSON file ([R.raw.users]) to provide fake user data.
+ *
+ * @property userApi The API service for user-related network calls.
+ * @property context The application context, used to access resources.
+ * @property moshi The Moshi instance for JSON serialization and deserialization.
+ */
 @Singleton
 class UserRepository @Inject constructor(
     private val userApi: UserApi,

@@ -8,6 +8,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.gauravbajaj.interviewready.ui.components.ErrorMessage
 
+/**
+ * A composable function that displays different UI based on the [UIState].
+ *
+ * This function handles the common UI states: Initial, Loading, Success, and Error.
+ *
+ * @param T The type of data associated with the [UIState].
+ * @param uiState The current state of the UI.
+ * @param modifier The modifier to be applied to the root Box. Defaults to [Modifier].
+ * @param onRetry A lambda function to be invoked when the user clicks the retry button in the error state. Defaults to an empty lambda.
+ * @param content A composable lambda that defines the UI to be displayed when the [uiState] is [UIState.Success].
+ */
 @Composable
 fun <T> ScreenContent(
     uiState: UIState<T>,

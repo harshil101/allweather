@@ -9,7 +9,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-
+/**
+ * A composable function that displays an error message with a retry button.
+ *
+ * @param message The error message to display.
+ * @param onRetry A callback function to be invoked when the retry button is clicked.
+ * @param modifier Optional modifier for this composable.
+ */
 @Composable
 fun ErrorMessage(
     message: String,

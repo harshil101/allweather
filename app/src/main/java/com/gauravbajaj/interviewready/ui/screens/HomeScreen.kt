@@ -17,6 +17,19 @@ import com.gauravbajaj.interviewready.ui.viewmodel.HomeViewModel
 import com.gauravbajaj.interviewready.ui.base.ScreenContent
 import com.gauravbajaj.interviewready.ui.base.UIState
 
+/**
+ * Composable function for the Home Screen.
+ *
+ * This screen displays a list of users fetched from a ViewModel.
+ * It handles different UI states (Initial, Loading, Success, Error)
+ * and allows retrying the data loading on error.
+ * Users can click on an item in the list, triggering the [onItemClick] callback.
+ *
+ * @param navController The NavController used for navigation.
+ * @param modifier The Modifier to be applied to the root Composable of this screen.
+ * @param onItemClick A callback function that is invoked when a user item is clicked.
+ *                    It receives the clicked [User] object as a parameter.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(

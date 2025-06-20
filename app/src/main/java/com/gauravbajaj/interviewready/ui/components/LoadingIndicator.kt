@@ -8,6 +8,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/**
+ * A composable function that displays a circular progress indicator centered within a Box.
+ *
+ * This is typically used to indicate that some background operation is in progress.
+ *
+ * @param modifier The modifier to be applied to the Box container.
+ */
 @Composable
 fun LoadingIndicator(
     modifier: Modifier = Modifier

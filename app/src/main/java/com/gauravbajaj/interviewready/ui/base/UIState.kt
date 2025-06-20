@@ -1,5 +1,13 @@
 package com.gauravbajaj.interviewready.ui.base
 
+/**
+ * Represents the different states of a UI.
+ *
+ * This sealed class is designed to be used with LiveData or StateFlow to observe UI state changes
+ * in ViewModels and update the UI accordingly in Activities or Fragments.
+ *
+ * @param T The type of data associated with the [Success] state.
+ */
 sealed class UIState<out T> {
     object Initial : UIState<Nothing>()
     object Loading : UIState<Nothing>()
