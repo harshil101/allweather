@@ -161,6 +161,13 @@ Taken from Google Pixel 9 Pro
 <p float="left">
   <img src="https://github.com/user-attachments/assets/d4c6a742-101c-4033-b980-71df4abdc2cb" width="300" />
   <img src="https://github.com/user-attachments/assets/a1ba5323-14bf-4cfb-8acd-3548d0b47798" width="300" /> 
+ 
+ <img src="https://github.com/user-attachments/assets/cca7b4dd-14ac-4ca9-80bc-5d832525d25f" width="300" />
+ 
+  <img src="https://github.com/user-attachments/assets/7f5f60f9-0622-4c3f-b62a-922e9f18c8f7" width="300" />
+ <img src="https://github.com/user-attachments/assets/86471ca2-627c-4df4-bd4a-41b273fb85dc" width="300" />
+
+ 
 </p>
 
 
