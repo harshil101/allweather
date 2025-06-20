@@ -1,5 +1,8 @@
 
+
 # 🚀 InterviewReady: Android Interview Project Skeleton (Kotlin, Jetpack Compose, MVVM)
+
+![MVVM Architecture](https://github.com/user-attachments/assets/f01ea363-b6ac-46e3-90f3-60915d08b05f)
 
 ## ✨ Overview
 
