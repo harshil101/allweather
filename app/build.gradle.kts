@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.gauravbajaj.interviewready"
+    namespace = "com.harshil.allweather"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.gauravbajaj.experiment"
+        applicationId = "com.harshil.experiment"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
