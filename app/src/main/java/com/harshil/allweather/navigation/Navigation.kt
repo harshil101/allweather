@@ -5,8 +5,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.harshil.allweather.data.model.User
-import com.harshil.allweather.ui.screens.DetailsScreen
 import com.harshil.allweather.ui.screens.HomeScreen
 
 /**
@@ -32,18 +30,7 @@ fun AllWeatherNavHost(
         startDestination = startDestination
     ) {
         composable(Screen.Home.route) {
-            HomeScreen(navController = navController, onItemClick = { user ->
-                navController.currentBackStackEntry?.savedStateHandle?.set("user", user)
-                navController.navigate(Screen.Details.route)
-            })
-        }
-
-        composable(
-            route = Screen.Details.route,
-        ) { backStackEntry ->
-            DetailsScreen(
-                navController = navController,
-            )
+            HomeScreen()
         }
     }
 }
