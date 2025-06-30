@@ -12,7 +12,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.harshil.experiment"
+
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -43,6 +43,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
     // Core Android & Kotlin
     implementation(libs.androidx.core.ktx) // Kotlin extensions for Android framework
     implementation(libs.androidx.lifecycle.runtime.ktx) // Lifecycle KTX for coroutines and LiveData
@@ -50,6 +51,8 @@ dependencies {
     implementation(libs.lifecycleViewModel) // ViewModel library for managing UI-related data
     implementation(libs.lifecycleViewModelCompose) // ViewModel integration with Jetpack Compose
     implementation(libs.androidx.activity.compose) // Activity integration with Jetpack Compose
+    implementation (libs.play.services.location) // Location Services
+
 
     // Jetpack Compose - UI Toolkit
     implementation(platform(libs.androidx.compose.bom)) // Bill of Materials for Compose versions

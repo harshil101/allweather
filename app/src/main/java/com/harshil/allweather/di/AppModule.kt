@@ -1,8 +1,8 @@
 package com.harshil.allweather.di
 
 import android.content.Context
-import com.harshil.allweather.data.api.UserApi
-import com.harshil.allweather.data.repository.UserRepository
+import com.harshil.allweather.data.api.WeatherApi
+import com.harshil.allweather.data.repository.WeatherRepository
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -24,7 +24,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-    private const val BASE_URL = "https://api.example.com/"
+    private const val BASE_URL = "https://api.openweathermap.org/"
 
     @Provides
     @Singleton
@@ -63,15 +63,15 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideUserApi(retrofit: Retrofit): UserApi =
-        retrofit.create(UserApi::class.java)
+    fun provideUserApi(retrofit: Retrofit): WeatherApi =
+        retrofit.create(WeatherApi::class.java)
 
     @Provides
     @Singleton
     fun provideUserRepository(
-        userApi: UserApi,
+        userApi: WeatherApi,
         @ApplicationContext context: Context,
         moshi: Moshi
-    ): UserRepository =
-        UserRepository(userApi, context, moshi)
+    ): WeatherRepository =
+        WeatherRepository(userApi, context, moshi)
 }

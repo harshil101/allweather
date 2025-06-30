@@ -11,6 +11,7 @@ composeBom = "2024.09.00"
 hiltAndroid = "2.48"
 materialIconsExtended = "1.4.3"
 okhttp = "4.12.0"
+playServicesLocation = "21.3.0"
 retrofit = "2.9.0"
 converterMoshi = "2.9.0"
 loggingInterceptor = "4.12.0"
@@ -26,6 +27,9 @@ lifecycleViewModel = "2.7.0"
 lifecycleViewModelCompose = "2.7.0"
 turbine = "0.10.0"
 hiltNavigationCompose = "1.2.0"
+appcompat = "1.6.1"
+material = "1.10.0"
+runtimeAndroid = "1.8.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -49,6 +53,7 @@ androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navig
 
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 okhttpLoggingInterceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "loggingInterceptor" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofitConverterMoshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "converterMoshi" }
 moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
@@ -63,6 +68,9 @@ lifecycleViewModel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel
 lifecycleViewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleViewModelCompose" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended", version.ref = "composeBom" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
